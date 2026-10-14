@@ -11,7 +11,24 @@
   <!-- Pretendard 웹폰트 -->
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+body {
+    letter-spacing: 0.01em;
+}
 
+nav a,
+.logo {
+    letter-spacing: 0.02em;
+}
+
+h2,
+h3 {
+    letter-spacing: -0.02em;
+}
+
+p {
+    letter-spacing: 0.005em;
+    line-height: 1.7;
+}
   <style>
     :root {
       --paper: #F7F7F5;
@@ -431,9 +448,9 @@
     .contact h2 {
       max-width: 900px;
       margin: 18px 0 32px;
-      font-size: clamp(43px, 8.3vw, 112px);
-      line-height: .98;
-      letter-spacing: -.08em;
+      font-size: clamp(34px, 6.5vw, 84px);
+      line-height: 1.15;
+      letter-spacing: -0.035em;
       font-weight: 600;
     }
 
@@ -1015,15 +1032,26 @@ body {
         something <span>meaningful.</span>
       </h2>
 
-      <div class="contact-bottom">
-        <p class="contact-copy">
-          새로운 브랜드를 준비하거나 기존 공간의 변화를 고민하고 있다면,
-          프로젝트의 방향과 필요한 범위를 함께 이야기해 보세요.
-        </p>
 
-        <!-- 실제 문의 이메일 주소인지 확인 후 수정 -->
-        <a class="contact-link" href="mailto:hello@studioplash.com">
-          PROJECT INQUIRY <span class="arrow">↗</span>
+<div class="contact-bottom">
+  <p class="contact-copy">
+    새로운 브랜드를 준비하거나 기존 공간의 변화를 고민하고 있다면,
+    프로젝트의 방향과 필요한 범위를 함께 이야기해 보세요.
+  </p>
+
+  <!-- 문의 이메일 -->
+  <a class="contact-link" href="mailto:aeae000@naver.com">
+    PROJECT INQUIRY <span class="arrow">↗</span>
+  </a>
+
+  <!-- 전화번호 -->
+  <a class="contact-link" href="tel:01051919323">
+    010-5191-9323 <span class="arrow">↗</span>
+  </a>
+</div>
+</section>
+
+
         </a>
       </div>
     </section>
