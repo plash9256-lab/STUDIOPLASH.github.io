@@ -141,4 +141,1121 @@
     .hero-index {
       color: var(--gray);
       font-size: 11px;
-      letter-spacing
+      letter-spacing: .12em;
+    }
+
+    .hero h1 {
+      max-width: 1120px;
+      margin: 0;
+      font-size: clamp(49px, 9.4vw, 136px);
+      line-height: .94;
+      letter-spacing: -.085em;
+      font-weight: 650;
+    }
+
+    .hero h1 span {
+      color: var(--gray);
+    }
+
+    .hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 32px;
+      margin-top: 46px;
+    }
+
+    .hero-copy {
+      max-width: 390px;
+      margin: 0;
+      font-size: clamp(14px, 1.4vw, 17px);
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--ink);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .arrow {
+      display: inline-block;
+      transition: transform .2s ease;
+    }
+
+    .hero-link:hover .arrow,
+    .project-open:hover .arrow {
+      transform: translate(3px, -3px);
+    }
+
+    /* FEATURE IMAGE */
+
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 2.05 / 1;
+      background: #E7E7E3;
+    }
+
+    .hero-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-image-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 12px;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* SECTION HEADING */
+
+    .section {
+      padding-top: clamp(90px, 12vw, 160px);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      margin: 12px 0 0;
+      font-size: clamp(38px, 6.2vw, 82px);
+      line-height: .98;
+      letter-spacing: -.07em;
+      font-weight: 600;
+    }
+
+    .section-description {
+      max-width: 270px;
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    /* PROJECT GRID */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(18px, 3.3vw, 48px);
+      row-gap: clamp(48px, 7vw, 100px);
+    }
+
+    .project {
+      min-width: 0;
+    }
+
+    .project:nth-child(even) {
+      margin-top: clamp(30px, 7vw, 100px);
+    }
+
+    .project-open {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .project-image {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1.13 / 1;
+      background: #E7E7E3;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .65s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .project-open:hover .project-image img {
+      transform: scale(1.035);
+    }
+
+    .project-image::after {
+      content: "VIEW PROJECT ↗";
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      padding: 10px 12px;
+      background: rgba(247, 247, 245, .94);
+      color: var(--ink);
+      font-size: 9px;
+      letter-spacing: .07em;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: .25s ease;
+    }
+
+    .project-open:hover .project-image::after,
+    .project-open:focus-visible .project-image::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 19px;
+      color: var(--gray);
+      font-size: 10px;
+      letter-spacing: .08em;
+    }
+
+    .project-title-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 9px;
+    }
+
+    .project-title {
+      margin: 0;
+      font-size: clamp(23px, 3vw, 37px);
+      font-weight: 600;
+      letter-spacing: -.055em;
+    }
+
+    .project-arrow {
+      flex: 0 0 auto;
+      font-size: 19px;
+      color: var(--gray);
+    }
+
+    .project-description {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    /* STUDIO STATEMENT */
+
+    .statement {
+      margin-top: clamp(110px, 17vw, 230px);
+      padding: clamp(50px, 9vw, 125px) 0;
+      background: #EAEAE7;
+    }
+
+    .statement-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .statement h2 {
+      margin: 18px 0 0;
+      font-size: clamp(35px, 5.7vw, 76px);
+      line-height: 1.04;
+      letter-spacing: -.075em;
+      font-weight: 600;
+    }
+
+    .statement h2 span {
+      color: var(--gray);
+    }
+
+    .statement-copy {
+      max-width: 440px;
+      padding-top: 45px;
+      margin-left: auto;
+    }
+
+    .statement-copy p {
+      margin: 0 0 18px;
+      color: #55575A;
+      font-size: 14px;
+      line-height: 1.95;
+    }
+
+    /* SERVICES */
+
+    .services-list {
+      margin-top: 38px;
+      border-top: 1px solid var(--line);
+    }
+
+    .service-row {
+      display: grid;
+      grid-template-columns: 70px 1fr 1fr;
+      gap: 22px;
+      align-items: baseline;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .service-number {
+      color: var(--gray);
+      font-size: 11px;
+    }
+
+    .service-name {
+      font-size: clamp(18px, 2.3vw, 28px);
+      letter-spacing: -.04em;
+    }
+
+    .service-detail {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      padding: clamp(100px, 15vw, 200px) 0;
+    }
+
+    .contact h2 {
+      max-width: 900px;
+      margin: 18px 0 32px;
+      font-size: clamp(43px, 8.3vw, 112px);
+      line-height: .98;
+      letter-spacing: -.08em;
+      font-weight: 600;
+    }
+
+    .contact h2 span {
+      color: var(--gray);
+    }
+
+    .contact-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+    }
+
+    .contact-copy {
+      max-width: 360px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--ink);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0 30px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: -.03em;
+    }
+
+    .footer-note {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
+      text-align: right;
+    }
+
+    /* PROJECT DETAIL MODAL */
+
+    .project-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      overflow-y: auto;
+      background: var(--paper);
+      overscroll-behavior: contain;
+    }
+
+    .project-modal.is-open {
+      display: block;
+    }
+
+    .modal-header {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 70px;
+      padding: 0 var(--page-padding);
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 247, 245, .96);
+      backdrop-filter: blur(12px);
+    }
+
+    .modal-back,
+    .modal-close {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border: 0;
+      background: transparent;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .modal-close {
+      font-size: 22px;
+    }
+
+    .modal-content {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--page-padding) 100px;
+    }
+
+    .modal-intro {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: end;
+      gap: 40px;
+      padding: clamp(55px, 9vw, 115px) 0 40px;
+    }
+
+    .modal-index {
+      color: var(--gray);
+      font-size: 11px;
+      letter-spacing: .12em;
+    }
+
+    .modal-title {
+      margin: 16px 0 0;
+      font-size: clamp(44px, 8vw, 100px);
+      line-height: .95;
+      letter-spacing: -.08em;
+      font-weight: 600;
+    }
+
+    .modal-category {
+      margin: 0 0 14px;
+      color: var(--gray);
+      font-size: 11px;
+      letter-spacing: .08em;
+    }
+
+    .modal-description {
+      max-width: 390px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .modal-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(12px, 2vw, 26px);
+    }
+
+    .gallery-item {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .gallery-item:first-child {
+      grid-column: 1 / -1;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      max-height: 850px;
+      object-fit: cover;
+      background: #E7E7E3;
+    }
+
+    .gallery-item figcaption {
+      padding-top: 10px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .modal-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-top: 65px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+    }
+
+    .modal-bottom button {
+      padding: 10px 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 700px) {
+      :root {
+        --page-padding: 20px;
+      }
+
+      .header {
+        min-height: 66px;
+      }
+
+      .logo {
+        font-size: 17px;
+      }
+
+      .nav {
+        gap: 16px;
+        font-size: 11px;
+      }
+
+      .nav a:first-child {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 78px;
+        padding-bottom: 65px;
+      }
+
+      .hero h1 {
+        font-size: clamp(47px, 12vw, 76px);
+      }
+
+      .hero-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 23px;
+        margin-top: 30px;
+      }
+
+      .hero-copy {
+        font-size: 14px;
+      }
+
+      .hero-image {
+        aspect-ratio: 1.05 / 1;
+      }
+
+      .section {
+        padding-top: 100px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 28px;
+      }
+
+      .section-heading h2 {
+        font-size: 49px;
+      }
+
+      .section-description {
+        max-width: 330px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+        row-gap: 48px;
+      }
+
+      .project:nth-child(even) {
+        margin-top: 0;
+      }
+
+      .project-image {
+        aspect-ratio: 1.04 / 1;
+      }
+
+      .project-image::after {
+        opacity: 1;
+        transform: none;
+      }
+
+      .project-title {
+        font-size: 31px;
+      }
+
+      .statement {
+        margin-top: 110px;
+      }
+
+      .statement-inner {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .statement h2 {
+        font-size: 48px;
+      }
+
+      .statement-copy {
+        padding-top: 12px;
+        margin-left: 0;
+      }
+
+      .service-row {
+        grid-template-columns: 35px 1fr;
+        gap: 12px;
+        padding: 21px 0;
+      }
+
+      .service-detail {
+        grid-column: 2;
+      }
+
+      .contact {
+        padding: 110px 0;
+      }
+
+      .contact h2 {
+        font-size: clamp(46px, 12vw, 72px);
+      }
+
+      .contact-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-note {
+        text-align: left;
+      }
+
+      .modal-header {
+        min-height: 62px;
+      }
+
+      .modal-intro {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-top: 65px;
+      }
+
+      .modal-title {
+        font-size: clamp(48px, 12vw, 76px);
+      }
+
+      .modal-gallery {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .gallery-item:first-child {
+        grid-column: auto;
+      }
+
+      .modal-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header wrap">
+    <a class="logo" href="#" aria-label="STUDIO PLASH 홈">
+      STUDIO <span>PLASH</span>
+    </a>
+
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="#projects">PROJECTS</a>
+      <a href="#studio">STUDIO</a>
+      <a href="#contact">CONTACT ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-top">
+        <span class="eyebrow">Spatial Planning · Brand Design</span>
+        <span class="hero-index">INDEPENDENT DESIGN STUDIO / KR</span>
+      </div>
+
+      <h1>
+        Good spaces<br>
+        start with <span>brands.</span>
+      </h1>
+
+      <div class="hero-bottom">
+        <p class="hero-copy">
+          브랜드의 방향에서 출발해 공간과 시각 언어를 설계합니다.
+          STUDIO PLASH는 브랜드가 경험되는 모든 접점을 하나의
+          기준으로 연결합니다.
+        </p>
+
+        <a class="hero-link" href="#projects">
+          SELECTED PROJECTS <span class="arrow">↘</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 임시 대표 이미지: 실제 프로젝트 대표 사진 URL로 교체 -->
+    <section class="wrap">
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2200&q=85"
+          alt="STUDIO PLASH 공간 디자인 대표 이미지"
+          fetchpriority="high">
+      </div>
+      <div class="hero-image-caption">
+        <span>SPACE AS A BRAND EXPERIENCE</span>
+        <span>STUDIO PLASH — SELECTED WORKS</span>
+      </div>
+    </section>
+
+    <section class="section wrap" id="projects">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">01 / Selected Works</span>
+          <h2>Projects<span class="muted">.</span></h2>
+        </div>
+        <p class="section-description">
+          서로 다른 브랜드와 공간의 조건을 분석하고,
+          각 프로젝트에 맞는 경험과 시각 언어를 설계합니다.
+        </p>
+      </div>
+
+      <div class="project-grid" id="projectGrid">
+        <!-- 프로젝트 카드는 JavaScript에서 생성됩니다. -->
+      </div>
+    </section>
+
+    <section class="statement" id="studio">
+      <div class="wrap statement-inner">
+        <div>
+          <span class="eyebrow">02 / Studio Philosophy</span>
+          <h2>
+            Design beyond<br>
+            the <span>interior.</span>
+          </h2>
+        </div>
+
+        <div class="statement-copy">
+          <p>
+            좋은 공간은 마감재나 형태만으로 완성되지 않습니다.
+            브랜드의 성격과 고객의 경험, 공간을 운영하는 방식까지
+            함께 고려해야 합니다.
+          </p>
+          <p>
+            STUDIO PLASH는 브랜드 기획과 공간 디자인을 연결해
+            기획 단계부터 실제 구현까지 일관된 방향을 제안합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="services">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">03 / What We Do</span>
+          <h2>Services<span class="muted">.</span></h2>
+        </div>
+        <p class="section-description">
+          브랜드 전략부터 공간 구현까지,
+          필요한 디자인 과정을 유기적으로 연결합니다.
+        </p>
+      </div>
+
+      <div class="services-list">
+        <div class="service-row">
+          <span class="service-number">01</span>
+          <span class="service-name">Brand Identity</span>
+          <span class="service-detail">
+            브랜드 방향 설정 · BI · 로고 · 그래픽 시스템 · 인쇄물
+          </span>
+        </div>
+
+        <div class="service-row">
+          <span class="service-number">02</span>
+          <span class="service-name">Spatial Planning</span>
+          <span class="service-detail">
+            공간 기획 · 동선 계획 · 콘셉트 · 인테리어 디자인
+          </span>
+        </div>
+
+        <div class="service-row">
+          <span class="service-number">03</span>
+          <span class="service-name">Design & Build</span>
+          <span class="service-detail">
+            현장 시공 · 맞춤 가구 · 사인 시스템 · 마감 구현
+          </span>
+        </div>
+
+        <div class="service-row">
+          <span class="service-number">04</span>
+          <span class="service-name">Brand Touchpoints</span>
+          <span class="service-detail">
+            메뉴 · 패키지 · 유니폼 · 촬영 · 온라인 매장 이미지
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact wrap" id="contact">
+      <span class="eyebrow">04 / Start a Project</span>
+      <h2>
+        Let’s make<br>
+        something <span>meaningful.</span>
+      </h2>
+
+      <div class="contact-bottom">
+        <p class="contact-copy">
+          새로운 브랜드를 준비하거나 기존 공간의 변화를 고민하고 있다면,
+          프로젝트의 방향과 필요한 범위를 함께 이야기해 보세요.
+        </p>
+
+        <!-- 실제 문의 이메일 주소인지 확인 후 수정 -->
+        <a class="contact-link" href="mailto:hello@studioplash.com">
+          PROJECT INQUIRY <span class="arrow">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">STUDIO PLASH</div>
+      <div class="footer-note">
+        SPACE PLANNING · INTERIOR · BRAND DESIGN<br>
+        © STUDIO PLASH. ALL RIGHTS RESERVED.
+      </div>
+    </div>
+  </footer>
+
+  <!-- 프로젝트 상세 화면 -->
+  <section
+    class="project-modal"
+    id="projectModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+    aria-hidden="true">
+
+    <header class="modal-header">
+      <button class="modal-back" id="modalBack" type="button">
+        ← <span>ALL PROJECTS</span>
+      </button>
+      <button
+        class="modal-close"
+        id="modalClose"
+        type="button"
+        aria-label="프로젝트 상세 닫기">×</button>
+    </header>
+
+    <div class="modal-content">
+      <div class="modal-intro">
+        <div>
+          <div class="modal-index" id="modalIndex"></div>
+          <h2 class="modal-title" id="modalTitle"></h2>
+        </div>
+        <div>
+          <p class="modal-category" id="modalCategory"></p>
+          <p class="modal-description" id="modalDescription"></p>
+        </div>
+      </div>
+
+      <div class="modal-gallery" id="modalGallery"></div>
+
+      <div class="modal-bottom">
+        <span class="muted">STUDIO PLASH — SELECTED WORKS</span>
+        <button id="modalNext" type="button">
+          NEXT PROJECT <span class="arrow">↗</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    /*
+      실제 사진 적용 방법:
+      아래 각 프로젝트의 images 배열에 실제 사진 URL을 입력하세요.
+      대표 사진은 첫 번째 이미지로 설정됩니다.
+      GitHub 저장소에 사진을 올리면
+      "assets/fukuran-01.jpg" 같은 상대 경로를 사용할 수 있습니다.
+    */
+
+    const projects = [
+      {
+        id: "fukuran",
+        number: "01",
+        name: "FUKURAN",
+        category: "RESTAURANT · BRAND & SPACE",
+        short: "브랜드의 개성을 공간 경험으로 연결한 레스토랑 리뉴얼.",
+        description:
+          "브랜드의 방향과 공간의 분위기가 자연스럽게 이어지도록 기획한 프로젝트입니다. 실제 사진을 활용해 공간 전경과 디테일을 함께 소개합니다.",
+        images: [
+          {
+            src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85",
+            alt: "FUKURAN 대표 공간 이미지",
+            caption: "01 / Overall View"
+          },
+          {
+            src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85",
+            alt: "FUKURAN 공간 디테일 이미지",
+            caption: "02 / Spatial Detail"
+          },
+          {
+            src: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85",
+            alt: "FUKURAN 소재와 마감 참고 이미지",
+            caption: "03 / Material & Finish"
+          }
+        ]
+      },
+      {
+        id: "sangbong",
+        number: "02",
+        name: "상봉주전",
+        category: "KOREAN DINING · BRAND & SPACE",
+        short: "한국형 이자카야 감성을 담은 한식 주점.",
+        description:
+          "한국적인 분위기와 주점의 활기를 바탕으로 브랜드 경험을 구성한 프로젝트입니다. 공간의 인상과 주요 디테일을 사진 중심으로 보여줍니다.",
+        images: [
+          {
+            src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=85",
+            alt: "상봉주전 대표 공간 이미지",
+            caption: "01 / Overall View"
+          },
+          {
+            src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=85",
+            alt: "상봉주전 다이닝 공간 참고 이미지",
+            caption: "02 / Dining Experience"
+          },
+          {
+            src: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=85",
+            alt: "상봉주전 인테리어 참고 이미지",
+            caption: "03 / Interior Detail"
+          }
+        ]
+      },
+      {
+        id: "aisuma",
+        number: "03",
+        name: "아이수마",
+        category: "RESTAURANT · INTERIOR RENEWAL",
+        short: "기존 매장의 분위기와 사용성을 개선한 리뉴얼.",
+        description:
+          "기존 공간을 바탕으로 마감과 조명, 가구 구성을 정리한 리뉴얼 프로젝트입니다. 실제 시공 사진을 중심으로 완성된 공간을 소개합니다.",
+        images: [
+          {
+            src: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=2000&q=85",
+            alt: "아이수마 대표 공간 이미지",
+            caption: "01 / Overall View"
+          },
+          {
+            src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=85",
+            alt: "아이수마 다이닝 공간 참고 이미지",
+            caption: "02 / Dining Area"
+          },
+          {
+            src: "https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?auto=format&fit=crop&w=1400&q=85",
+            alt: "아이수마 디테일 참고 이미지",
+            caption: "03 / Detail"
+          }
+        ]
+      },
+      {
+        id: "garden",
+        number: "04",
+        name: "정원소재실용화센터",
+        category: "PUBLIC SPACE · SPATIAL PLANNING",
+        short: "전시와 판매, 업무 기능을 연결하는 공공 공간 기획.",
+        description:
+          "전시·판매 공간과 공용부, 업무 공간 등 다양한 기능을 고려한 공공 프로젝트입니다. 공간별 역할과 이용 경험을 중심으로 구성합니다.",
+        images: [
+          {
+            src: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2000&q=85",
+            alt: "정원소재실용화센터 대표 공간 참고 이미지",
+            caption: "01 / Main Space"
+          },
+          {
+            src: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1400&q=85",
+            alt: "정원소재실용화센터 자연 환경 참고 이미지",
+            caption: "02 / Landscape"
+          },
+          {
+            src: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1400&q=85",
+            alt: "정원소재실용화센터 식물 전시 참고 이미지",
+            caption: "03 / Botanical Display"
+          }
+        ]
+      }
+    ];
+
+    const grid = document.getElementById("projectGrid");
+    const modal = document.getElementById("projectModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalIndex = document.getElementById("modalIndex");
+    const modalCategory = document.getElementById("modalCategory");
+    const modalDescription = document.getElementById("modalDescription");
+    const modalGallery = document.getElementById("modalGallery");
+    const modalNext = document.getElementById("modalNext");
+    let currentProjectIndex = 0;
+    let previousFocus = null;
+
+    function createProjectCards() {
+      grid.innerHTML = projects.map((project, index) => `
+        <article class="project">
+          <button
+            class="project-open"
+            type="button"
+            data-project-index="${index}"
+            aria-label="${project.name} 프로젝트 상세 보기">
+            <div class="project-image">
+              <img
+                src="${project.images[0].src}"
+                alt="${project.images[0].alt}"
+                loading="lazy">
+            </div>
+            <div class="project-meta">
+              <span>${project.number} / SELECTED WORK</span>
+              <span>${project.category}</span>
+            </div>
+            <div class="project-title-row">
+              <h3 class="project-title">${project.name}</h3>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+            <p class="project-description">${project.short}</p>
+          </button>
+        </article>
+      `).join("");
+
+      grid.querySelectorAll("[data-project-index]").forEach(button => {
+        button.addEventListener("click", () => {
+          openProject(Number(button.dataset.projectIndex));
+        });
+      });
+    }
+
+    function openProject(index) {
+      currentProjectIndex = index;
+      previousFocus = document.activeElement;
+      renderProject();
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      modal.scrollTop = 0;
+      document.getElementById("modalClose").focus();
+      history.replaceState(null, "", `#project-${projects[index].id}`);
+    }
+
+    function closeProject() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      history.replaceState(null, "", location.pathname + location.search);
+
+      if (previousFocus) previousFocus.focus();
+    }
+
+    function renderProject() {
+      const project = projects[currentProjectIndex];
+
+      modalIndex.textContent =
+        `${project.number} / SELECTED PROJECT`;
+      modalTitle.textContent = project.name;
+      modalCategory.textContent = project.category;
+      modalDescription.textContent = project.description;
+
+      modalGallery.innerHTML = project.images.map((image, index) => `
+        <figure class="gallery-item">
+          <img
+            src="${image.src}"
+            alt="${image.alt}"
+            ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'}>
+          <figcaption>${image.caption}</figcaption>
+        </figure>
+      `).join("");
+
+      modalNext.innerHTML =
+        `NEXT PROJECT <span class="arrow">↗</span>`;
+    }
+
+    document.getElementById("modalClose")
+      .addEventListener("click", closeProject);
+
+    document.getElementById("modalBack")
+      .addEventListener("click", closeProject);
+
+    modalNext.addEventListener("click", () => {
+      currentProjectIndex = (currentProjectIndex + 1) % projects.length;
+      renderProject();
+      modal.scrollTop = 0;
+      history.replaceState(
+        null,
+        "",
+        `#project-${projects[currentProjectIndex].id}`
+      );
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && modal.classList.contains("is-open")) {
+        closeProject();
+      }
+    });
+
+    createProjectCards();
+  </script>
+</body>
+</html>
