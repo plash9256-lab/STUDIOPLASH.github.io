@@ -1,295 +1,144 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f5f3ee">
-<title>STUDIO PLASH — Space & Brand</title>
-<meta name="description" content="STUDIO PLASH. 공간기획부터 브랜드 디자인, 인테리어 시공까지.">
-<style>
-:root {
-  --bg: #f5f3ee;
-  --ink: #252521;
-  --muted: #77766f;
-  --line: #d7d4cb;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-}
-a { color: inherit; text-decoration: none; }
-header {
-  padding: 25px 5.5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--line);
-}
-.logo { font-size: 21px; font-weight: 800; letter-spacing: -1px; }
-.logo span { font-weight: 400; }
-nav { display: flex; gap: 30px; font-size: 12px; }
-.hero { padding: 76px 5.5% 30px; }
-.eyebrow {
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--muted);
-  text-transform: uppercase;
-}
-h1 {
-  font-size: clamp(43px, 8.5vw, 112px);
-  line-height: .98;
-  letter-spacing: -.075em;
-  font-weight: 500;
-  margin: 30px 0;
-}
-h1 em { font-family: Georgia, serif; font-weight: 400; }
-.hero-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 25px;
-  margin-top: 45px;
-}
-.intro { max-width: 410px; font-size: 14px; line-height: 1.9; }
-.intro strong { font-weight: 600; }
-.hero-note { font-size: 10px; letter-spacing: 1px; color: var(--muted); }
-.hero-image {
-  margin: 35px 5.5% 100px;
-  height: min(66vw, 650px);
-  min-height: 300px;
-  background: #b5afa3;
-  overflow: hidden;
-}
-.hero-image img, .project-image img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  transition: transform .7s ease;
-}
-.hero-image img { object-position: center 55%; }
-.section { padding: 0 5.5% 100px; }
-.section-heading {
-  display: flex; justify-content: space-between; align-items: baseline;
-  border-bottom: 1px solid var(--ink); padding-bottom: 16px; margin-bottom: 28px;
-}
-.section-heading h2 { font-size: 12px; font-weight: 500; letter-spacing: 1px; }
-.section-heading p { font-size: 11px; color: var(--muted); }
-.projects {
-  display: grid; grid-template-columns: 1.15fr .85fr; gap: 52px 22px;
-}
-.project:nth-child(even) { margin-top: 100px; }
-.project-image { aspect-ratio: 1.2 / 1; overflow: hidden; background: #d5d0c6; }
-.project:nth-child(2) .project-image { aspect-ratio: .88 / 1; }
-.project:nth-child(3) .project-image { aspect-ratio: .95 / 1; }
-.project:hover .project-image img { transform: scale(1.035); }
-.project-meta {
-  display: flex; justify-content: space-between; gap: 12px;
-  margin-top: 15px; align-items: baseline;
-}
-.project h3 { margin: 0; font-size: 20px; font-weight: 500; letter-spacing: -.6px; }
-.project p { margin: 8px 0 0; font-size: 11px; color: var(--muted); }
-.project-no { font-size: 10px; color: var(--muted); }
-.about {
-  background: #282923; color: var(--bg);
-  padding: 90px 5.5% 100px;
-  display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px;
-}
-.about h2 {
-  font-size: clamp(34px, 5vw, 62px);
-  font-weight: 400; line-height: 1.1; letter-spacing: -.06em; margin: 25px 0;
-}
-.about-copy { font-size: 14px; line-height: 2; color: #d1d0c8; max-width: 510px; }
-.services { padding: 90px 5.5% 100px; }
-.service-row {
-  display: grid; grid-template-columns: 65px 1fr 1fr; gap: 20px;
-  padding: 23px 0; border-bottom: 1px solid var(--line); align-items: baseline;
-}
-.service-row:first-of-type { border-top: 1px solid var(--ink); }
-.service-num { font-size: 11px; color: var(--muted); }
-.service-row h3 { margin: 0; font-size: 22px; font-weight: 500; }
-.service-row p { margin: 0; font-size: 12px; line-height: 1.8; color: var(--muted); }
-.contact {
-  margin: 0 5.5% 40px; padding: 60px 0 70px;
-  border-top: 1px solid var(--ink);
-}
-.contact h2 {
-  font-size: clamp(40px, 8vw, 90px); letter-spacing: -.07em;
-  font-weight: 400; margin: 25px 0;
-}
-.contact-bottom {
-  display: flex; justify-content: space-between; gap: 25px;
-  align-items: end; margin-top: 45px;
-}
-.contact-bottom p { font-size: 13px; line-height: 1.9; }
-.contact-link {
-  display: inline-block; border-bottom: 1px solid var(--ink);
-  padding: 12px 0; font-size: 12px;
-}
-footer {
-  border-top: 1px solid var(--line); padding: 22px 5.5%;
-  display: flex; justify-content: space-between; gap: 20px;
-  font-size: 10px; color: var(--muted);
-}
-@media (max-width: 650px) {
-  header { padding: 20px 5%; }
-  .logo { font-size: 18px; }
-  nav { gap: 14px; font-size: 10px; }
-  .hero { padding: 65px 5% 20px; }
-  h1 { font-size: clamp(43px, 12vw, 72px); }
-  .hero-bottom { align-items: start; flex-direction: column; gap: 12px; }
-  .intro { font-size: 13px; }
-  .hero-image { margin: 25px 5% 70px; height: 115vw; min-height: 0; }
-  .section { padding: 0 5% 75px; }
-  .projects { grid-template-columns: 1fr; gap: 38px; }
-  .project:nth-child(even) { margin-top: 0; }
-  .project-image, .project:nth-child(2) .project-image,
-  .project:nth-child(3) .project-image { aspect-ratio: 1.08 / 1; }
-  .project h3 { font-size: 19px; }
-  .about { padding: 65px 5%; grid-template-columns: 1fr; gap: 15px; }
-  .about h2 { margin: 20px 0; }
-  .services { padding: 65px 5% 75px; }
-  .service-row { grid-template-columns: 30px 1fr; gap: 12px; }
-  .service-row p { grid-column: 2; }
-  .service-row h3 { font-size: 19px; }
-  .contact { margin: 0 5% 25px; padding: 55px 0; }
-  .contact-bottom { align-items: start; flex-direction: column; gap: 15px; }
-  footer { padding: 20px 5%; flex-direction: column; gap: 8px; }
-}
-</style>
-</head>
-<body>
-<header>
-  <a class="logo" href="#">STUDIO <span>PLASH</span></a>
-  <nav>
-    <a href="#projects">PROJECTS</a>
-    <a href="#about">STUDIO</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
-</header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F7F7F5">
 
-<main>
-  <section class="hero">
-    <div class="eyebrow">Space Planning · Interior · Brand Design</div>
-    <h1>Good spaces<br>start with <em>brands.</em></h1>
-    <div class="hero-bottom">
-      <div class="intro">
-        <strong>공간은 브랜드를 경험하는 가장 직접적인 방법입니다.</strong><br>
-        STUDIO PLASH는 브랜드의 방향을 공간과 시각 언어로 연결합니다.
-        기획부터 디자인, 시공까지 하나의 흐름으로 완성합니다.
-      </div>
-      <div class="hero-note">STRATEGY → DESIGN → BUILD</div>
-    </div>
-  </section>
+  <title>STUDIO PLASH — Space & Brand Design</title>
+  <meta name="description" content="STUDIO PLASH는 브랜드 전략부터 공간 기획, 인테리어, 시각 디자인까지 브랜드의 경험을 설계합니다.">
 
-  <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85" alt="공간 디자인 프로젝트">
-  </div>
+  <!-- Pretendard 웹폰트 -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 
-  <section class="section" id="projects">
-    <div class="section-heading">
-      <h2>SELECTED PROJECTS</h2>
-      <p>Selected works · 2024—2026</p>
-    </div>
-    <div class="projects">
-      <article class="project">
-        <a href="#contact">
-          <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85" alt="레스토랑 공간">
-          </div>
-          <div class="project-meta"><h3>FUKURAN</h3><span class="project-no">01</span></div>
-          <p>RESTAURANT · SPACE RENEWAL</p>
-        </a>
-      </article>
-      <article class="project">
-        <a href="#contact">
-          <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=85" alt="다이닝 공간">
-          </div>
-          <div class="project-meta"><h3>상봉주전</h3><span class="project-no">02</span></div>
-          <p>KOREAN PUB · BRAND EXPERIENCE</p>
-        </a>
-      </article>
-      <article class="project">
-        <a href="#contact">
-          <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=85" alt="레스토랑 인테리어">
-          </div>
-          <div class="project-meta"><h3>아이수마</h3><span class="project-no">03</span></div>
-          <p>RESTAURANT · INTERIOR DESIGN</p>
-        </a>
-      </article>
-      <article class="project">
-        <a href="#contact">
-          <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85" alt="공간 기획 및 디자인">
-          </div>
-          <div class="project-meta"><h3>Garden Materials Center</h3><span class="project-no">04</span></div>
-          <p>PUBLIC SPACE · SPACE PLANNING</p>
-        </a>
-      </article>
-    </div>
-  </section>
+  <style>
+    :root {
+      --paper: #F7F7F5;
+      --white: #FFFFFF;
+      --ink: #242424;
+      --gray: #888A8D;
+      --line: #DEDEDB;
+      --muted: #686A6D;
+      --max-width: 1440px;
+      --page-padding: clamp(20px, 5.2vw, 80px);
+    }
 
-  <section class="about" id="about">
-    <div>
-      <div class="eyebrow">About STUDIO PLASH</div>
-      <h2>Beyond<br>the space.</h2>
-    </div>
-    <div class="about-copy">
-      우리는 공간을 꾸미는 데서 멈추지 않습니다.<br>
-      브랜드가 가진 성격과 사업의 방향을 이해하고,
-      고객이 경험하는 공간과 시각 요소를 하나의 기준으로 설계합니다.
-      <br><br>
-      브랜드 전략부터 아이덴티티, 인테리어, 사인 시스템,
-      맞춤 가구와 시공까지. 필요한 과정을 연결해 일관된 결과를 만듭니다.
-    </div>
-  </section>
+    * {
+      box-sizing: border-box;
+    }
 
-  <section class="services">
-    <div class="section-heading">
-      <h2>WHAT WE DO</h2>
-      <p>From concept to completion</p>
-    </div>
-    <div class="service-row">
-      <span class="service-num">01</span>
-      <h3>Space Planning</h3>
-      <p>공간 기획 · 동선 계획 · 인테리어 디자인 · 시공</p>
-    </div>
-    <div class="service-row">
-      <span class="service-num">02</span>
-      <h3>Brand Identity</h3>
-      <p>브랜드 전략 · 로고 · 그래픽 · 인쇄물 디자인</p>
-    </div>
-    <div class="service-row">
-      <span class="service-num">03</span>
-      <h3>Visual System</h3>
-      <p>사인 · 메뉴 · 패키지 · 유니폼 · 맞춤 가구</p>
-    </div>
-    <div class="service-row">
-      <span class="service-num">04</span>
-      <h3>Project Direction</h3>
-      <p>제작물 관리 · 현장 조율 · 오픈 준비 지원</p>
-    </div>
-  </section>
+    html {
+      scroll-behavior: smooth;
+    }
 
-  <section class="contact" id="contact">
-    <div class="eyebrow">Have a project in mind?</div>
-    <h2>Let's make it<br>meaningful.</h2>
-    <div class="contact-bottom">
-      <p>새로운 공간과 브랜드를 준비하고 있다면<br>
-      프로젝트에 대해 편하게 이야기해 주세요.</p>
-      <a class="contact-link" href="mailto:hello@studioplash.com">PROJECT INQUIRY ↗</a>
-    </div>
-  </section>
-</main>
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Pretendard", "Apple SD Gothic Neo",
+                   "Malgun Gothic", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
 
-<footer>
-  <span>STUDIO PLASH</span>
-  <span>SPACE · INTERIOR · BRAND</span>
-  <span>© 2026 STUDIO PLASH</span>
-</footer>
-</body>
-</html>
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      color: inherit;
+      font: inherit;
+    }
+
+    button:focus-visible,
+    a:focus-visible {
+      outline: 2px solid var(--gray);
+      outline-offset: 4px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--page-padding);
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    /* HEADER */
+
+    .header {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 82px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -.055em;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      font-weight: 400;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 3vw, 42px);
+      font-size: 12px;
+    }
+
+    .nav a {
+      transition: opacity .2s ease;
+    }
+
+    .nav a:hover {
+      opacity: .55;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding-top: clamp(70px, 11vw, 160px);
+      padding-bottom: clamp(65px, 10vw, 130px);
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .hero-index {
+      color: var(--gray);
+      font-size: 11px;
+      letter-spacing
