@@ -447,11 +447,10 @@
     /* CONTACT */
 
    .contact {
-  width: 100%;
-  max-width: 100%;
+   padding: clamp(100px, 15vw, 200px) 0;
   min-width: 0;
   box-sizing: border-box;
-  padding: clamp(100px, 15vw, 200px) 0;
+  overflow-wrap: anywhere;
 }
 
     .contact h2 {
@@ -467,11 +466,13 @@
       color: var(--gray);
     }
 
-    .contact-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 24px;
+   .contact-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  min-width: 0;
+  flex-wrap: wrap;
     }
 
     .contact-copy {
