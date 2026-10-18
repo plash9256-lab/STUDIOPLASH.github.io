@@ -919,43 +919,132 @@ body {
   </header>
 
   <main>
-    <section class="hero wrap">
-      <div class="hero-top">
-        <span class="eyebrow">Spatial Planning · Brand Design</span>
-        <span class="hero-index">INDEPENDENT DESIGN STUDIO / KR</span>
-      </div>
+ 
+/* HERO */
 
-      <h1>
-        Good spaces<br>
-        start with <span>brands.</span>
-      </h1>
+.hero {
+  position: relative;
+  padding: 0;
+}
 
-      <div class="hero-bottom">
-        <p class="hero-copy">
-          브랜드의 방향에서 출발해 공간과 시각 언어를 설계합니다.
-          STUDIO PLASH는 브랜드가 경험되는 모든 접점을 하나의
-          기준으로 연결합니다.
-        </p>
+.hero-image {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 650px;
+  height: min(78vh, 900px);
+  background: #292925;
+}
 
-        <a class="hero-link" href="#projects">
-          SELECTED PROJECTS <span class="arrow">↘</span>
-        </a>
-      </div>
-    </section>
+.hero-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+}
 
-    <!-- 임시 대표 이미지: 실제 프로젝트 대표 사진 URL로 교체 -->
-    <section class="wrap">
-      <div class="hero-image">
-        <img
-          src="assets/studioplash-01.jpg"
-          alt="STUDIO PLASH 공간 디자인 대표 이미지"
-          fetchpriority="high">
-      </div>
-      <div class="hero-image-caption">
-        <span>SPACE AS A BRAND EXPERIENCE</span>
-        <span>STUDIO PLASH — SELECTED WORKS</span>
-      </div>
-    </section>
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 15, 13, 0.78) 0%,
+    rgba(15, 15, 13, 0.48) 45%,
+    rgba(15, 15, 13, 0.08) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  min-height: 650px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 90px;
+  color: #F7F7F5;
+}
+
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.hero-index {
+  color: rgba(247, 247, 245, 0.72);
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+
+.hero h1 {
+  max-width: 1120px;
+  margin: 0;
+  font-size: clamp(49px, 9.4vw, 136px);
+  line-height: 1.05;
+  letter-spacing: -.055em;
+  font-weight: 650;
+}
+
+.hero h1 span {
+  color: rgba(247, 247, 245, 0.68);
+}
+
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-top: 38px;
+}
+
+.hero-copy {
+  max-width: 390px;
+  margin: 0;
+  font-size: clamp(14px, 1.4vw, 17px);
+  line-height: 1.8;
+  color: rgba(247, 247, 245, 0.84);
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(247, 247, 245, 0.8);
+  color: #F7F7F5;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform .2s ease;
+}
+
+.hero-link:hover .arrow,
+.project-open:hover .arrow {
+  transform: translate(3px, -3px);
+}
+
+.hero-image-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 12px;
+  font-size: 10px;
+  color: var(--muted);
+}
+
 
     <section class="section wrap" id="projects">
       <div class="section-heading">
